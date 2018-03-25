@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Java Test</title>
+</head>
+<body>
+  <label for="weather">Select the weather type today: </label>
+  <select id="weather">
+    <option value>--Make a choice--</option>
+    <option value="sunny">Sunny</option>
+    <option value="rainy">Rainy</option>
+    <option value="snowing">Snowing</option>
+    <option value="overcast">Overcast</option>
+  </select>
+  <p></p>
+  <script>
+    var select = document.querySelector('select');
+    var para = document.querySelector('p');
+    var temperature = 29;
+    
+    select.onchange = setWeather;
+
+    function setWeather() {
+    	var choice = select.value
+
+    	if(choice === 'sunny') {
+    		para.textContext = 'It\'s sunny!';
+    	}	else if(choice === 'rainy') {
+    		para.textContext = 'It\'s raining :(';
+    	}	else if(choice === 'snowing') {
+    		para.textContext = 'It\'s snowing: magical.';
+    	}	else if(choice === 'overcast') {
+    		para.textContext = 'It is not raining, but it might :/';
+    	}	else {
+    		para.textContext = '';
+    	}
+    }
+  </script>
+</body>
+</html>
